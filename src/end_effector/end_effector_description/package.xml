@@ -1,0 +1,24 @@
+<!-- Specifies dependencies and package configuration. -->
+<package format="2">
+  <!-- Name of project, make sure it is the same in CMakeLists.txt -->
+  <name>end_effector_description</name>
+  <version>1.0.0</version>
+  <description>end_effector URDF description.</description>
+
+  <maintainer email="z5467190@ad.unsw.edu.au" />
+  
+  <author email="z5467190@ad.unsw.edu.au">Josh Sapers</author>
+  <license>BSD</license>
+
+  <!-- Find build tools that are required. -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>ur_description</depend>
+  <!-- Find packages that are required. -->
+  <depend>rclpy</depend>
+
+  <!-- Define a meta-package. -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,3 @@
+string command   # Request to control the electromagnet
+---
+string response  # Response will contain the status like "Electromagnet On", "Brick picked", etc.

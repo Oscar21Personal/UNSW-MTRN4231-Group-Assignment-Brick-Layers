@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!-- The purpose of this file is to fix the end_effector to some abstract link so the end_effector can be used in the world. -->
+
+<robot name="end_effector" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Including the end_effector.urdf.xacro file to give scope to xacro:end_effector. Inclusion is a simple copy-and-paste of code. -->
+  <xacro:include filename="$(find end_effector_description)/urdf/end_effector.urdf.xacro" />
+  
+  <xacro:arg name="name" default="ur5"/>
+  <xacro:arg name="ur_type" default="ur5"/>
+  <xacro:include filename="$(find ur_description)/urdf/ur.urdf.xacro"/>
+
+  <!-- This is the abstract link which the base of the end_effector attaches to. -->
+  <!-- <link name="end_effector_root_link" /> -->
+  
+  <!-- Instantiate the end_effector by using its macro. -->
+  <xacro:end_effector prefix="" parent="tool0" >
+
+    <!-- Note that we are passing in a tag as an argument. -->
+    <origin xyz="0 0 .02" rpy="-1.5707963 0 0"/>
+  </xacro:end_effector>
+  <!-- <joint name="end_effector_coupler_joint" type="fixed">
+    <parent link="tool0"/>
+    <child link="${prefix}ee_link"/>
+  </joint> -->
+
+</robot>
